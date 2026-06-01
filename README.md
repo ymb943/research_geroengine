@@ -1,7 +1,7 @@
 <div align="center">
   <img src="docs/img/trademark.png" width="500" />
 
-# GeroEngine: Generative single-cell aging trajectories reveal a bidirectionally traversable identity core and direction-specific inflammatory remodeling [<sub>[link]</sub>](https://#)
+# GeroEngine: Generative single-cell aging trajectories reveal a bidirectionally traversable identity core and direction-specific inflammatory remodeling [![Paper](https://img.shields.io/badge/Paper-Link-blue)](https://#)
 
 [Youngmin Bhak](https://scholar.google.com/citations?user=H3pKrzYAAAAJ)<sup>1,2</sup>, [Sungwon Jeon](https://scholar.google.com/citations?user=9o-0nIQAAAAJ)<sup>3</sup>, [Jong Bhak](https://scholar.google.com/citations?user=ZUBVdMAAAAAJ)<sup>1,3,*</sup>  
 
