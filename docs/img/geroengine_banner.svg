@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b91c1c"/>
+    </marker>
+    <linearGradient id="head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf2f2"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="640" fill="#ffffff"/>
+  <rect x="0" y="0" width="1280" height="150" fill="url(#head)"/>
+  <rect x="0" y="0" width="8" height="640" fill="#b91c1c"/>
+
+  <!-- Title -->
+  <text x="60" y="80" font-size="54" font-weight="bold" fill="#b91c1c">GeroEngine</text>
+  <text x="62" y="116" font-size="21" fill="#334155">A generative framework for simulating single-cell aging trajectories from cross-sectional scRNA-seq</text>
+
+  <!-- Stage A: cross-sectional snapshots -->
+  <rect x="56" y="196" width="250" height="250" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="181" y="224" font-size="17" font-weight="bold" fill="#0f172a" text-anchor="middle">The problem</text>
+  <text x="181" y="248" font-size="13.5" fill="#475569" text-anchor="middle">scRNA-seq is destructive:</text>
+  <text x="181" y="266" font-size="13.5" fill="#475569" text-anchor="middle">only static snapshots, never</text>
+  <text x="181" y="284" font-size="13.5" fill="#475569" text-anchor="middle">one cell tracked over time</text>
+  <!-- young cluster -->
+  <circle cx="120" cy="350" r="7" fill="#0d9488"/><circle cx="138" cy="338" r="7" fill="#0d9488"/><circle cx="134" cy="362" r="7" fill="#0d9488"/><circle cx="108" cy="334" r="7" fill="#0d9488"/>
+  <text x="125" y="402" font-size="13" fill="#0f172a" text-anchor="middle">Young (3 mo)</text>
+  <!-- old cluster -->
+  <circle cx="232" cy="350" r="7" fill="#7c3aed"/><circle cx="250" cy="338" r="7" fill="#7c3aed"/><circle cx="246" cy="362" r="7" fill="#7c3aed"/><circle cx="220" cy="334" r="7" fill="#7c3aed"/>
+  <text x="240" y="402" font-size="13" fill="#0f172a" text-anchor="middle">Old (24 mo)</text>
+  <path d="M152 348 C 180 326, 200 326, 222 346" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+  <text x="186" y="320" font-size="15" fill="#94a3b8" text-anchor="middle">?</text>
+
+  <path d="M310 321 L348 321" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage B: GeroEngine VAE -->
+  <rect x="352" y="176" width="392" height="290" rx="14" fill="#fff7f7" stroke="#b91c1c" stroke-width="1.8"/>
+  <text x="548" y="204" font-size="17" font-weight="bold" fill="#b91c1c" text-anchor="middle">GeroEngine &#8212; VAE latent manifold</text>
+  <text x="548" y="226" font-size="13" fill="#475569" text-anchor="middle">non-linear, technical-artifact-aware simulation</text>
+
+  <!-- GeroVector core -->
+  <rect x="470" y="300" width="156" height="40" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.5"/>
+  <text x="548" y="325" font-size="15" font-weight="bold" fill="#b91c1c" text-anchor="middle">GeroVector  g</text>
+
+  <!-- forward -->
+  <rect x="372" y="258" width="92" height="34" rx="7" fill="#ecfeff" stroke="#0d9488" stroke-width="1.4"/>
+  <text x="418" y="280" font-size="12.5" fill="#0f172a" text-anchor="middle">Young cell</text>
+  <rect x="632" y="258" width="100" height="34" rx="7" fill="#ecfeff" stroke="#0d9488" stroke-width="1.4"/>
+  <text x="682" y="274" font-size="12" font-weight="bold" fill="#0d9488" text-anchor="middle">GeroSimOld</text>
+  <text x="682" y="287" font-size="10.5" fill="#475569" text-anchor="middle">young&#8594;old</text>
+  <path d="M464 275 C 500 275, 510 312, 470 318" fill="none" stroke="#0d9488" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M626 318 C 600 312, 600 275, 632 275" fill="none" stroke="#0d9488" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="548" y="270" font-size="12.5" font-weight="bold" fill="#0d9488" text-anchor="middle">Forward  + g</text>
+
+  <!-- reverse -->
+  <rect x="372" y="350" width="92" height="34" rx="7" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.4"/>
+  <text x="418" y="372" font-size="12.5" fill="#0f172a" text-anchor="middle">Old cell</text>
+  <rect x="632" y="350" width="100" height="34" rx="7" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.4"/>
+  <text x="682" y="366" font-size="11.5" font-weight="bold" fill="#7c3aed" text-anchor="middle">GeroSimYoung</text>
+  <text x="682" y="379" font-size="10.5" fill="#475569" text-anchor="middle">old&#8594;young</text>
+  <path d="M464 367 C 500 367, 510 330, 470 324" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M626 324 C 600 330, 600 367, 632 367" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="548" y="408" font-size="12.5" font-weight="bold" fill="#7c3aed" text-anchor="middle">Reverse  &#8722; g</text>
+
+  <text x="548" y="440" font-size="12.5" fill="#475569" text-anchor="middle">Benchmarking vs. linear baselines (PCA, ALS)</text>
+  <text x="548" y="458" font-size="12.5" fill="#475569" text-anchor="middle">in a 12-fold LOPO consensus</text>
+
+  <path d="M748 321 L786 321" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage C: GeroTargets -->
+  <rect x="790" y="246" width="150" height="150" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="865" y="300" font-size="15" font-weight="bold" fill="#b91c1c" text-anchor="middle">GeroTargets</text>
+  <text x="865" y="322" font-size="12.5" fill="#475569" text-anchor="middle">consensus</text>
+  <text x="865" y="339" font-size="12.5" fill="#475569" text-anchor="middle">aging signature</text>
+  <text x="865" y="362" font-size="11.5" fill="#475569" text-anchor="middle">(12/12 folds)</text>
+
+  <path d="M944 321 L982 321" stroke="#b91c1c" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- Stage D: regulators / network -->
+  <rect x="986" y="216" width="236" height="210" rx="14" fill="#fff7f7" stroke="#b91c1c" stroke-width="1.6"/>
+  <text x="1104" y="244" font-size="15" font-weight="bold" fill="#b91c1c" text-anchor="middle">GeroRegulators</text>
+  <text x="1104" y="262" font-size="12" fill="#475569" text-anchor="middle">reverse PageRank on curated graphs</text>
+  <text x="1104" y="292" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">GeroNetwork</text>
+  <!-- three pillar chips -->
+  <rect x="1004" y="312" width="200" height="26" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="1104" y="330" font-size="11.5" fill="#166534" text-anchor="middle">Pillar I &#183; identity / replication</text>
+  <rect x="1004" y="344" width="200" height="26" rx="6" fill="#f1f5f9" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="1104" y="362" font-size="11.5" fill="#334155" text-anchor="middle">Pillar II &#183; dimorphic stress core</text>
+  <rect x="1004" y="376" width="200" height="26" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="1.2"/>
+  <text x="1104" y="394" font-size="11.5" fill="#9a3412" text-anchor="middle">Pillar III &#183; inflammatory cascade</text>
+
+  <!-- novelty strip -->
+  <text x="60" y="512" font-size="15" font-weight="bold" fill="#0f172a">Core novelty</text>
+  <rect x="60" y="524" width="372" height="74" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+  <text x="78" y="552" font-size="13.5" font-weight="bold" fill="#b91c1c">1 &#160;Artifact-aware non-linear simulation</text>
+  <text x="78" y="574" font-size="12.5" fill="#475569">reduces dropout carryover while keeping</text>
+  <text x="78" y="590" font-size="12.5" fill="#475569">age-associated heterogeneity</text>
+
+  <rect x="454" y="524" width="372" height="74" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+  <text x="472" y="552" font-size="13.5" font-weight="bold" fill="#7c3aed">2 &#160;Bidirectional, state-dependent validation</text>
+  <text x="472" y="574" font-size="12.5" fill="#475569">forward/reverse traversal exposes a shared</text>
+  <text x="472" y="590" font-size="12.5" fill="#475569">identity core vs direction-specific programs</text>
+
+  <rect x="848" y="524" width="374" height="74" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+  <text x="866" y="552" font-size="13.5" font-weight="bold" fill="#16a34a">3 &#160;Upstream regulator &amp; pillar inference</text>
+  <text x="866" y="574" font-size="12.5" fill="#475569">maps a three-pillar hierarchy and the</text>
+  <text x="866" y="590" font-size="12.5" fill="#475569">&#8220;primacy of identity loss&#8221;</text>
+</svg>
