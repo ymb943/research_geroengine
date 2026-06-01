@@ -30,13 +30,13 @@ conda env create -f ./GeroEngine_environment.yml -n py39_geroengine
 ./data/tabula-muris-senis-facs-official-raw-obj.h5ad
 ```
 
-# 1. Select HVG
+# 1. Select HVGs
 ```bash
 bash 01_select_hvgs.sh
 Output: ./aging_simulation_model_gene_selection
 ```
 
-# 2. Select hyperparameters
+# 2. Select Hyperparameters
 ```bash
 02_1_search_hyperparameters.sh
 Output: ./aging_simulation_model_gene_selection
@@ -45,15 +45,15 @@ Output: ./aging_simulation_model_gene_selection
 Output: ./aging_simulation_hyperparameter_search_aggregation_and_plot
 ```
 
-# 3. Train model
+# 3. Train Model
 ```bash
 bash 03_train_gerosimulator.sh
 Output: ./aging_simulation_model
 ```
 
-# 4. Download trained model
+# 4. Download Trained Model
 
-# 5. Inference
+# 5. Run Inference
 ```bash
 bash 05_1_inference_forward_simulation.sh
 Output: ./aging_simulation_model_inference_main
@@ -74,13 +74,13 @@ bash 06_find_gerotarget.sh
 Output: ./concensus_genes_for_master_regulator
 ```
 
-# 7. GSEA on GeroTargets derived from Forward Simulation
+# 7. Perform GSEA on GeroTargets
 ```bash
 bash 07_gsea.sh
 Output: ./gsea
 ```
 
-# 8. Find GeroRegulators from GeroTargets
+# 8. Find GeroRegulators
 ```bash
 bash 08_1_construct_network_database.sh 
 Output: ./gene_network_construction
@@ -95,7 +95,7 @@ bash 08_4_regulator_filtering_by_topological_score_and_min_target.sh
 Output: ./master_regulator_filtering2
 ```
 
-# 9. Construct GeroNetwork data
+# 9. Construct GeroNetwork Data
 ```bash
 bash 09_1_construct_paths_of_targets_and_regulators.sh
 Output: ./master_regulator_to_aging_gene_paths
@@ -104,7 +104,7 @@ bash 09_2_construct_final_network_data.sh
 Output: ./unify_data_for_integrated_network
 ```
 
-# 10. Figure generation
+# 10. Generate Figures
 ```bash
 bash 10_1_figure_metrics.sh
 Output: ./figure_generator
