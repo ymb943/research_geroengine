@@ -20,12 +20,12 @@
 ## The three-pillar model
 ![Three pillars](docs/img/geroengine_three_pillars.svg)
 
-# Construct conda environment
+# Set-Up Conda Environment
 ```bash
 conda env create -f ./GeroEngine_environment.yml -n py39_geroengine
 ```
 
-# Data preparation
+# Prepare Data
 ```bash
 ./data/tabula-muris-senis-facs-official-raw-obj.h5ad
 ```
