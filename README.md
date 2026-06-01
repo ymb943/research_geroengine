@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/img/trademark.png" width="600" />
+  <img src="docs/img/trademark.png" width="500" />
 
 # GeroEngine: Generative single-cell aging trajectories reveal a bidirectionally traversable identity core and direction-specific inflammatory remodeling
 
