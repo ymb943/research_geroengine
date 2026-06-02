@@ -38,10 +38,10 @@ Output: ./aging_simulation_model_gene_selection
 
 # 2. Select Hyperparameters
 ```bash
-02_1_search_hyperparameters.sh
+bash 02_1_search_hyperparameters.sh
 Output: ./aging_simulation_model_gene_selection
 
-02_2_plot_searched_hyperparameters.sh
+bash 02_2_plot_searched_hyperparameters.sh
 Output: ./aging_simulation_hyperparameter_search_aggregation_and_plot
 ```
 
