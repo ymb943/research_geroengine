@@ -1,21 +1,16 @@
 <div align="center">
-  <img src="docs/img/trademark.png" width="600" />
-</div>
+  <img src="docs/img/trademark.png" width="500" />
 
-<span style="font-size: 3.25em; font-weight: bold;">
-GeroEngine: Generative single-cell aging trajectories reveal a bidirectionally traversable identity core and direction-specific inflammatory remodeling
-</span>
-
-<span style="font-size: 2.25em;">
+# GeroEngine: Generative single-cell aging trajectories reveal a bidirectionally traversable identity core and direction-specific inflammatory remodeling [![Paper](https://img.shields.io/badge/Paper-Link-blue)](https://#)
 
 [Youngmin Bhak](https://scholar.google.com/citations?user=H3pKrzYAAAAJ)<sup>1,2</sup>, [Sungwon Jeon](https://scholar.google.com/citations?user=9o-0nIQAAAAJ)<sup>3</sup>, [Jong Bhak](https://scholar.google.com/citations?user=ZUBVdMAAAAAJ)<sup>1,3,*</sup>  
+
 <sup>1</sup> [Department of Biomedical Engineering](https://bme.unist.ac.kr/eng/), College of Information and Biotechnology, [Ulsan National Institute of Science and Technology (UNIST)](https://www.unist.ac.kr/unist/index.do), Ulsan, Republic of Korea  
 <sup>2</sup> [Spidercore Inc](https://www.spidercore.io/), Daejeon, Republic of Korea  
 <sup>3</sup> [AgingLab](https://aginglab.com/), Ulsan National Institute of Science and Technology (UNIST), Ulsan, Republic of Korea  
 
 <sup>*</sup> Corresponding author: [jongbhak@gmail.com](mailto:jongbhak@gmail.com)
-
-</span>
+</div>
 
 ---
 
@@ -25,40 +20,40 @@ GeroEngine: Generative single-cell aging trajectories reveal a bidirectionally t
 ## The three-pillar model
 ![Three pillars](docs/img/geroengine_three_pillars.svg)
 
-# Construct conda environment
+# Set-Up Conda Environment
 ```bash
 conda env create -f ./GeroEngine_environment.yml -n py39_geroengine
 ```
 
-# Data preparation
+# Prepare Data
 ```bash
 ./data/tabula-muris-senis-facs-official-raw-obj.h5ad
 ```
 
-# 1. Select HVG
+# 1. Select HVGs
 ```bash
 bash 01_select_hvgs.sh
 Output: ./aging_simulation_model_gene_selection
 ```
 
-# 2. Select hyperparameters
+# 2. Select Hyperparameters
 ```bash
-02_1_search_hyperparameters.sh
+bash 02_1_search_hyperparameters.sh
 Output: ./aging_simulation_model_gene_selection
 
-02_2_plot_searched_hyperparameters.sh
+bash 02_2_plot_searched_hyperparameters.sh
 Output: ./aging_simulation_hyperparameter_search_aggregation_and_plot
 ```
 
-# 3. Train model
+# 3. Train Model
 ```bash
 bash 03_train_gerosimulator.sh
 Output: ./aging_simulation_model
 ```
 
-# 4. Download trained model
+# 4. Download Trained Model
 
-# 5. Inference
+# 5. Run Inference
 ```bash
 bash 05_1_inference_forward_simulation.sh
 Output: ./aging_simulation_model_inference_main
@@ -79,13 +74,13 @@ bash 06_find_gerotarget.sh
 Output: ./concensus_genes_for_master_regulator
 ```
 
-# 7. GSEA on GeroTargets derived from Forward Simulation
+# 7. Perform GSEA on GeroTargets
 ```bash
 bash 07_gsea.sh
 Output: ./gsea
 ```
 
-# 8. Find GeroRegulators from GeroTargets
+# 8. Find GeroRegulators
 ```bash
 bash 08_1_construct_network_database.sh 
 Output: ./gene_network_construction
@@ -100,7 +95,7 @@ bash 08_4_regulator_filtering_by_topological_score_and_min_target.sh
 Output: ./master_regulator_filtering2
 ```
 
-# 9. Construct GeroNetwork data
+# 9. Construct GeroNetwork Data
 ```bash
 bash 09_1_construct_paths_of_targets_and_regulators.sh
 Output: ./master_regulator_to_aging_gene_paths
@@ -109,7 +104,7 @@ bash 09_2_construct_final_network_data.sh
 Output: ./unify_data_for_integrated_network
 ```
 
-# 10. Figure generation
+# 10. Generate Figures
 ```bash
 bash 10_1_figure_metrics.sh
 Output: ./figure_generator
